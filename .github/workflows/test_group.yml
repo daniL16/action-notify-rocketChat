@@ -11,7 +11,7 @@ jobs:
       - uses: actions/checkout@v1
       - uses: ./
         with:
-          message: 'Un PR salvaje apareció! ${{ github.event_path	}}'
+          message: ${{ github.event	}}
           ROCKET_CHAT_HOOK: ${{ secrets.ROCKET_CHAT_HOOK }}
           ROCKET_CHAT_URL: ${{ secrets.ROCKET_CHAT_HOST }}
           BOT_NAME: 'Harold'
