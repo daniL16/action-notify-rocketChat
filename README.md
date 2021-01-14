@@ -23,7 +23,7 @@ jobs:
       - uses: actions/checkout@v1
       - uses: daniL16/action-notify-rocketChat@v1.0.0
         with:
-          ROCKET_CHAT_HOOK: "jx3Xu73EQWA54bZwh/PBaQsa9NAD4zfCXLzvfWPpvPELi5jDfStqTfmuzuxkYqkhMv"
+          ROCKET_CHAT_HOOK: "jx3Xu73zuxkYqkhMv"
           message: 'Test'
 
 ```
