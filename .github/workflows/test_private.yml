@@ -1,0 +1,20 @@
+name: Test private message
+
+on:
+  - push
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Test
+    steps:
+      - uses: actions/checkout@v1
+      - uses: ./
+        with:
+          message: 'Test'
+          ROCKET_CHAT_USER: ${{ secrets.ROCKET_CHAT_USER }}
+          ROCKET_CHAT_PASS: ${{ secrets.ROCKET_CHAT_PASS }}
+          ROCKET_CHAT_URL: ${{ secrets.ROCKET_CHAT_HOST }}
+          MESSAGE_TO: daniel.lopez
+          BOT_NAME: 'Pingu'
+          BOT_AVATAR: 'https://media.metrolatam.com/2019/10/16/18ps27-638137169a2d73f9f63481c115a7f092.jpg'

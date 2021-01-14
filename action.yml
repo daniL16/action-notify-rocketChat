@@ -2,12 +2,15 @@ name: 'Set approved label and automerge'
 description: 'Set approved label and automerge'
 
 inputs:
+   ROCKET_CHAT_URL:
+     description: 'Url'
+     required: true
+   message:
+      description: 'Message to send'
+      required: true
    ROCKET_CHAT_HOOK:
       description: 'Github token'
       required: true
-   message:
-      description: 'Number of ok reviews'
-      required: false
    ROCKET_CHAT_USER:
      description: 'User for private messages'
      required: false
@@ -17,17 +20,23 @@ inputs:
    MESSAGE_TO:
      description: 'Who receives private message'
      required: false
+   BOT_NAME:
+     description: 'Custom name for your bot'
+     required: false
+     default: 'Github Bot'
+   BOT_AVATAR:
+     description: 'Custom avatar for your bot'
+     required: false
 
 runs:
    using: 'docker'
    image: 'Dockerfile'
    args:
-      - ${{ inputs.ROCKET_CHAT_HOOK }}
+      - ${{ inputs.ROCKET_CHAT_URL}}
       - ${{ inputs.message }}
+      - ${{ inputs.ROCKET_CHAT_HOOK }}
       - ${{ inputs.ROCKET_CHAT_USER }}
       - ${{ inputs.ROCKET_CHAT_PASS }}
       - ${{ inputs.MESSAGE_TO }}
-
-branding:
-   icon: 'tag'
-   color: 'green'
+      - ${{ inputs.BOT_NAME }}
+      - ${{ inputs.BOT_AVATAR }}
