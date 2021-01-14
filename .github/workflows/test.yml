@@ -1,0 +1,15 @@
+name: test
+
+on:
+  - pull_request
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    name: Test this PR
+    steps:
+      - uses: actions/checkout@v1
+      - uses: ./
+        with:
+          ROCKET_CHAT_HOOK: "jx3Xu73EQWA54bZwh/PBaQsa9NAD4zfCXLzvfWPpvPELi5jDfStqTfmuzuxkYqkhMv"
+          message: 'Test'

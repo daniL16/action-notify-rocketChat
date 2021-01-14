@@ -1,0 +1,20 @@
+name: 'Set approved label and automerge'
+description: 'Set approved label and automerge'
+
+inputs:
+   ROCKET_CHAT_HOOK:
+      description: 'Github token'
+      required: true
+   message:
+      description: 'Number of ok reviews'
+      required: false
+runs:
+   using: 'docker'
+   image: 'Dockerfile'
+   args:
+      - ${{ inputs.ROCKET_CHAT_HOOK }}
+      - ${{ inputs.message }}
+    
+branding:
+   icon: 'tag'
+   color: 'green'
