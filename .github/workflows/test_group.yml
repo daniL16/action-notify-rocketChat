@@ -9,10 +9,10 @@ jobs:
     name: Test
     steps:
       - uses: actions/checkout@v1
-      - run: echo ${{ toJson(github.event.pull_request) }}
+      - run: echo ${{ toJson(github.event.pull_request.html_url) }}
       - uses: ./
         with:
-          message: ${{ github.event.pull_request.html }}
+          message: ${{ github.event.pull_request.html_url }}
           ROCKET_CHAT_HOOK: ${{ secrets.ROCKET_CHAT_HOOK }}
           ROCKET_CHAT_URL: ${{ secrets.ROCKET_CHAT_HOST }}
           BOT_NAME: 'Harold'
