@@ -3,7 +3,7 @@ name: Test group message
 on:
   pull_request:
       types:
-        - created
+        - opened
 
 jobs:
   test:
