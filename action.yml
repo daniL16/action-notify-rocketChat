@@ -8,13 +8,26 @@ inputs:
    message:
       description: 'Number of ok reviews'
       required: false
+   ROCKET_CHAT_USER:
+     description: 'User for private messages'
+     required: false
+   ROCKET_CHAT_PASS:
+     description: 'User password for private messages'
+     required: false
+   MESSAGE_TO:
+     description: 'Who receives private message'
+     required: false
+
 runs:
    using: 'docker'
    image: 'Dockerfile'
    args:
       - ${{ inputs.ROCKET_CHAT_HOOK }}
       - ${{ inputs.message }}
-    
+      - ${{ inputs.ROCKET_CHAT_USER }}
+      - ${{ inputs.ROCKET_CHAT_PASS }}
+      - ${{ inputs.MESSAGE_TO }}
+
 branding:
    icon: 'tag'
    color: 'green'
