@@ -9,6 +9,7 @@ jobs:
     name: Test
     steps:
       - uses: actions/checkout@v1
+      - run: echo ${{ github.event.issue.html_url }}
       - uses: ./
         with:
           message: ${{ github.event.issue.html_url }}
