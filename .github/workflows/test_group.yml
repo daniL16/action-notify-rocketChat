@@ -9,7 +9,7 @@ jobs:
     name: Test
     steps:
       - uses: actions/checkout@v1
-      - run: echo ${{ toJson(github.event) }}
+      - run: echo ${{ github.event.pull_request }}
       - uses: ./
         with:
           message: ${{ github.event.issue.html_url }}
