@@ -1,5 +1,5 @@
-name: 'Set approved label and automerge'
-description: 'Set approved label and automerge'
+name: 'Send message to Rocket Chat'
+description: 'Send message to Rocket Chat server'
 
 inputs:
    ROCKET_CHAT_URL:
@@ -40,3 +40,6 @@ runs:
       - ${{ inputs.MESSAGE_TO }}
       - ${{ inputs.BOT_NAME }}
       - ${{ inputs.BOT_AVATAR }}
+branding:
+   icon: 'message-circle'
+   color: 'blue'
