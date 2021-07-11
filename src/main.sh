@@ -12,9 +12,9 @@ export BOT_NAME="$7"
 export BOT_AVATAR="$8"
 
 if [[ -n "$5" ]]; then
-  rocket::sendPrivateMessage $4 $5 $6 $2
+  rocket::sendPrivateMessage $4 $5 $6 "$2"
 else
-  rocket::sendGroupMessage $3 $2
+  rocket::sendGroupMessage $3 "$2"
 fi
    exit $?
 }
